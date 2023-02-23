@@ -1,0 +1,53 @@
+{
+  "name": "electron-quick-start",
+  "version": "1.0.0",
+  "description": "A minimal Electron application",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron-forge start",
+    "make": "electron-forge make --arch x64 --platform win32",
+	"build": "node .electron-vue/build.js && electron-builder --win --x64",
+    "package": "electron-packager . outApp --out outApp --arch=x64 --overwrite --ignore=node_modules",
+    "win": "electron-packager . outApp --out outApp --platform=win32 --arch=x64 --overwrite --ignore=node_modules"
+  },
+  "build": {
+    "appId": "com.xxx.app",
+    "copyright": "LEON",
+    "productName": "myApp",
+    "mac": {
+      "target": [
+        "dmg",
+        "zip"
+      ]
+    },
+    "win": {
+      "target": [
+        "nsis",
+        "zip"
+      ]
+    }
+  },
+  "repository": "https://github.com/electron/electron-quick-start",
+  "keywords": [
+    "Electron",
+    "quick",
+    "start",
+    "tutorial",
+    "demo"
+  ],
+  "author": "GitHub",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "@electron-forge/cli": "^6.0.5",
+    "@electron-forge/maker-deb": "^6.0.5",
+    "@electron-forge/maker-rpm": "^6.0.5",
+    "@electron-forge/maker-squirrel": "^6.0.5",
+    "@electron-forge/maker-zip": "^6.0.5",
+    "electron": "^23.0.0",
+    "electron-builder": "^23.6.0",
+    "electron-vue": "^0.0.1"
+  },
+  "dependencies": {
+    "electron-squirrel-startup": "^1.0.0"
+  }
+}
